@@ -3,7 +3,7 @@
     "home": "Home",
     "projects": "Projects",
     "blog": "Blog",
-    "about": "About",
+    "about": "About Me",
     "contact": "Contact"
   },
   "hero": {
@@ -55,7 +55,7 @@
     "older": "Older"
   },
   "about_page": {
-    "title": "About"
+    "title": "About Me"
   },
   "contact_page": {
     "title": "Contact",

@@ -3,16 +3,16 @@
     "home": "Hjem",
     "projects": "Projekter",
     "blog": "Blog",
-    "about": "Om",
+    "about": "Om mig",
     "contact": "Kontakt"
   },
   "hero": {
-    "subtitle": "Data & Udvikling. Jeg omsætter data til indsigt og idéer til software, der virker i praksis.",
+    "subtitle": "Data & Udvikling. Jeg gør data til indsigt og bygger software, der virker i praksis.",
     "cta_work": "Se mit arbejde",
     "cta_contact": "Kontakt mig"
   },
   "sections": {
-    "what_i_work_with": "Det jeg arbejder med",
+    "what_i_work_with": "Arbejdsområder",
     "featured_projects": "Udvalgte projekter",
     "latest_posts": "Seneste indlæg",
     "view_all_projects": "Se alle projekter",
@@ -21,7 +21,7 @@
   "areas": {
     "data_engineering": {
       "title": "Data Engineering",
-      "desc": "Jeg bygger pipelines, der flytter, renser og strukturerer data i stor skala. ETL/ELT-workflows, databasedesign og cloud-infrastruktur på AWS og Databricks."
+      "desc": "Jeg bygger pipelines, der flytter, renser og strukturerer data. ETL/ELT-workflows, databasedesign og cloud-infrastruktur på AWS og Databricks."
     },
     "machine_learning": {
       "title": "Machine Learning",
@@ -29,19 +29,19 @@
     },
     "data_analytics": {
       "title": "Dataanalyse",
-      "desc": "At gøre rå data til klar indsigt. Statistisk analyse, visualisering og rapportering, der hjælper folk med at træffe bedre beslutninger."
+      "desc": "Jeg gør rå data til klare svar. Statistisk analyse, visualisering og rapportering, der gør det nemmere at tage gode beslutninger."
     },
     "fullstack": {
       "title": "Full-Stack Udvikling",
-      "desc": "Backend-logik, API'er, databaser og frontend-interfaces. PHP, Python, JavaScript. Det der virker i praksis."
+      "desc": "Backend-logik, API'er, databaser og frontend. PHP, Python, JavaScript. Det der virker i praksis."
     },
     "automation": {
       "title": "Automatisering",
-      "desc": "Erstatter manuelle processer med kode. E-mail-workflows, API-integrationer, dokumentgenerering og planlagte jobs."
+      "desc": "Jeg erstatter manuelle processer med kode. E-mail-workflows, API-integrationer, generering af dokumenter og automatiske jobs."
     },
     "communication": {
       "title": "Formidling",
-      "desc": "8 år som naturfagslærer har lært mig at forklare komplekse emner klart. Jeg kan lide at bygge bro mellem teknisk arbejde og de mennesker, der bruger det."
+      "desc": "8 år som naturfagslærer lærte mig at forklare komplekse ting klart. Jeg kan godt lide at bygge bro mellem det tekniske og dem, der skal bruge det."
     }
   },
   "projects_page": {
@@ -55,11 +55,11 @@
     "older": "Ældre"
   },
   "about_page": {
-    "title": "Om"
+    "title": "Om mig"
   },
   "contact_page": {
     "title": "Kontakt",
-    "intro": "Interesseret i at arbejde sammen? Jeg er åben for freelance-projekter, konsulentopgaver og fuldtidsstillinger inden for data science og engineering."
+    "intro": "Skal vi arbejde sammen? Jeg er åben for freelanceopgaver, konsulentarbejde og faste stillinger inden for data og udvikling."
   },
   "empty": {
     "projects": "Projekter kommer snart.",
@@ -75,10 +75,10 @@
     "view_source": "Se kildekode"
   },
   "footer": {
-    "rights": "Alle rettigheder forbeholdes."
+    "rights": "Alle rettigheder forbeholdt."
   },
   "error": {
-    "not_found": "Siden blev ikke fundet.",
+    "not_found": "Denne side findes ikke.",
     "go_home": "Gå til forsiden"
   }
 }

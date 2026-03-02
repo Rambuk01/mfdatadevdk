@@ -29,7 +29,7 @@ $twig->addFilter(new TwigFilter('truncate', function (string $text, int $length 
 }));
 
 // Global template variables
-$twig->addGlobal('site_name', 'Mario Festersen');
+$twig->addGlobal('site_name', 'MF Data & Development');
 $twig->addGlobal('site_tagline', 'Data & Development');
 $twig->addGlobal('current_year', date('Y'));
 
