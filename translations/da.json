@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "home": "Hjem",
+    "projects": "Projekter",
+    "blog": "Blog",
+    "about": "Om",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "subtitle": "Data & Udvikling. Jeg omsætter data til indsigt og idéer til software, der virker i praksis.",
+    "cta_work": "Se mit arbejde",
+    "cta_contact": "Kontakt mig"
+  },
+  "sections": {
+    "what_i_work_with": "Det jeg arbejder med",
+    "featured_projects": "Udvalgte projekter",
+    "latest_posts": "Seneste indlæg",
+    "view_all_projects": "Se alle projekter",
+    "read_all_posts": "Læs alle indlæg"
+  },
+  "areas": {
+    "data_engineering": {
+      "title": "Data Engineering",
+      "desc": "Jeg bygger pipelines, der flytter, renser og strukturerer data i stor skala. ETL/ELT-workflows, databasedesign og cloud-infrastruktur på AWS og Databricks."
+    },
+    "machine_learning": {
+      "title": "Machine Learning",
+      "desc": "Tidsserieforecasting, NLP og deep learning. Jeg kan godt lide at bygge modeller, der løser rigtige problemer og faktisk kan køre i produktion."
+    },
+    "data_analytics": {
+      "title": "Dataanalyse",
+      "desc": "At gøre rå data til klar indsigt. Statistisk analyse, visualisering og rapportering, der hjælper folk med at træffe bedre beslutninger."
+    },
+    "fullstack": {
+      "title": "Full-Stack Udvikling",
+      "desc": "Backend-logik, API'er, databaser og frontend-interfaces. PHP, Python, JavaScript. Det der virker i praksis."
+    },
+    "automation": {
+      "title": "Automatisering",
+      "desc": "Erstatter manuelle processer med kode. E-mail-workflows, API-integrationer, dokumentgenerering og planlagte jobs."
+    },
+    "communication": {
+      "title": "Formidling",
+      "desc": "8 år som naturfagslærer har lært mig at forklare komplekse emner klart. Jeg kan lide at bygge bro mellem teknisk arbejde og de mennesker, der bruger det."
+    }
+  },
+  "projects_page": {
+    "title": "Projekter",
+    "intro": "Et udvalg af mit arbejde inden for data og udvikling."
+  },
+  "blog_page": {
+    "title": "Blog",
+    "read_more": "Læs mere",
+    "newer": "Nyere",
+    "older": "Ældre"
+  },
+  "about_page": {
+    "title": "Om"
+  },
+  "contact_page": {
+    "title": "Kontakt",
+    "intro": "Interesseret i at arbejde sammen? Jeg er åben for freelance-projekter, konsulentopgaver og fuldtidsstillinger inden for data science og engineering."
+  },
+  "empty": {
+    "projects": "Projekter kommer snart.",
+    "posts": "Blogindlæg kommer snart.",
+    "blog_posts": "Ingen indlæg endnu. Kig forbi snart!"
+  },
+  "post": {
+    "back_to_blog": "Tilbage til blog"
+  },
+  "project": {
+    "back_to_projects": "Tilbage til projekter",
+    "view_live": "Se live",
+    "view_source": "Se kildekode"
+  },
+  "footer": {
+    "rights": "Alle rettigheder forbeholdes."
+  },
+  "error": {
+    "not_found": "Siden blev ikke fundet.",
+    "go_home": "Gå til forsiden"
+  }
+}
