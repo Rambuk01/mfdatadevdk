@@ -139,34 +139,75 @@ php -l index.php
 php -S localhost:8000
 ```
 
+## SSH (Simply.com Server)
+
+```bash
+# Connect to server
+ssh -i ~/.ssh/simply_deploy mfdatadev.dk@linux163.unoeuro.com
+
+# Check disk usage
+ssh -i ~/.ssh/simply_deploy mfdatadev.dk@linux163.unoeuro.com "du -sh public_html/*"
+
+# Check PHP version on server
+ssh -i ~/.ssh/simply_deploy mfdatadev.dk@linux163.unoeuro.com "php -v"
+
+# View server error log (if accessible)
+ssh -i ~/.ssh/simply_deploy mfdatadev.dk@linux163.unoeuro.com "tail -50 ~/logs/error.log"
+
+# List files on server
+ssh -i ~/.ssh/simply_deploy mfdatadev.dk@linux163.unoeuro.com "ls -la public_html/"
+
+# Quick file transfer (single file)
+scp -i ~/.ssh/simply_deploy localfile.txt mfdatadev.dk@linux163.unoeuro.com:public_html/
+```
+
 ## Deploy to Production
 
 ```bash
 # Deploy happens automatically on push to main
 git push origin main
 
-# Manually check deploy status
+# Trigger deploy manually (without pushing)
+gh workflow run deploy.yml
+
+# Check deploy status
 gh run list --limit 5
 
-# SSH into simply.com (if needed)
-ssh user@your-server.simply.com
+# Watch a running deploy
+gh run watch
+
+# View failed deploy logs
+gh run view <run-id> --log-failed
 ```
 
-## SSH Key Setup (for GitHub Actions deploy)
+## GitHub Secrets
+
+```bash
+# Set a secret
+gh secret set SECRET_NAME --repo Rambuk01/mfdatadevdk --body "value"
+
+# Set a secret from file
+gh secret set SSH_PRIVATE_KEY --repo Rambuk01/mfdatadevdk < ~/.ssh/simply_deploy
+
+# List all secrets
+gh secret list --repo Rambuk01/mfdatadevdk
+
+# Current secrets configured:
+# SSH_PRIVATE_KEY  - deploy key private content
+# SSH_HOST         - linux163.unoeuro.com
+# SSH_USER         - mfdatadev.dk
+# SERVER_PATH      - /var/www/mfdatadev.dk/public_html
+```
+
+## SSH Key Setup (if you need to regenerate)
 
 ```bash
 # Generate deploy key
 ssh-keygen -t ed25519 -f ~/.ssh/simply_deploy -C "github-actions-deploy"
 
-# Copy public key (add to simply.com)
+# Copy public key (add to simply.com control panel)
 cat ~/.ssh/simply_deploy.pub
 
-# Copy private key (add to GitHub Secrets as SSH_PRIVATE_KEY)
-cat ~/.ssh/simply_deploy
-
-# GitHub Secrets to configure:
-# SSH_PRIVATE_KEY  - private key content
-# SSH_HOST         - simply.com server hostname
-# SSH_USER         - SSH username
-# SERVER_PATH      - e.g. /home/username/public_html
+# Update GitHub secret with new private key
+gh secret set SSH_PRIVATE_KEY --repo Rambuk01/mfdatadevdk < ~/.ssh/simply_deploy
 ```
