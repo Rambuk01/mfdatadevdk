@@ -10,10 +10,10 @@
     --color-bg: #f7f6f3;
     --color-bg-alt: #eeedea;
     --color-surface: #ffffff;
-    --color-text: #1a1a1a;
-    --color-text-secondary: #4a4a4a;
-    --color-text-muted: #8a8a8a;
-    --color-accent: #1a1a1a;
+    --color-text: #000000;
+    --color-text-secondary: #333333;
+    --color-text-muted: #777777;
+    --color-accent: #000000;
     --color-accent-hover: #000000;
     --color-border: #ddd;
     --color-code-bg: #eeedea;
@@ -385,6 +385,54 @@ main {
 
 .section + .section {
     border-top: 1px solid var(--color-border);
+}
+
+/* ========================================
+   Work Areas Grid — incentio-style
+   ======================================== */
+
+.areas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--color-border);
+    border: 1px solid var(--color-border);
+}
+
+.area-card {
+    background: var(--color-bg);
+    padding: var(--space-xl) var(--space-lg);
+    transition: background-color var(--transition);
+}
+
+.area-card:hover {
+    background: var(--color-surface);
+}
+
+.area-card h3 {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+    letter-spacing: -0.02em;
+}
+
+.area-card p {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    font-weight: 300;
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .areas-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .areas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* ========================================
