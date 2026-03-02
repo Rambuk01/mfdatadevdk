@@ -1,7 +1,8 @@
 RewriteEngine On
 RewriteBase /
 
-# Force HTTPS
+# Force HTTPS (skip in local development)
+RewriteCond %{HTTP_HOST} !^localhost [NC]
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
