@@ -8,6 +8,7 @@ class WordPressApi
     private string $cacheDir;
     private int $cacheTtl;
     private int $lastTotalPages = 1;
+    private string $language = 'da';
 
     public function __construct(string $baseUrl, int $cacheTtlSeconds = 300)
     {
@@ -18,6 +19,14 @@ class WordPressApi
         if (!is_dir($this->cacheDir)) {
             mkdir($this->cacheDir, 0755, true);
         }
+    }
+
+    /**
+     * Set the language for API requests (used with Polylang).
+     */
+    public function setLanguage(string $lang): void
+    {
+        $this->language = $lang;
     }
 
     /**
@@ -89,6 +98,7 @@ class WordPressApi
      */
     private function get(string $endpoint, array $params = []): ?array
     {
+        $params['lang'] = $this->language;
         $url = $this->baseUrl . $endpoint . '?' . http_build_query($params);
         $cacheKey = md5($url);
         $cacheFile = $this->cacheDir . '/' . $cacheKey . '.json';
