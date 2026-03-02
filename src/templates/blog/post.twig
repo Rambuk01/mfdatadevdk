@@ -6,7 +6,7 @@
 <article class="section">
     <div class="container container-narrow">
         <header class="post-header">
-            <a href="/blog" class="back-link">&larr; Back to blog</a>
+            <a href="{{ lang == 'da' ? '/blog' : '/en/blog' }}" class="back-link">&larr; {{ t.post.back_to_blog }}</a>
             <h1>{{ post.title.rendered|raw }}</h1>
             <time datetime="{{ post.date }}">{{ post.date|date("F j, Y") }}</time>
         </header>

@@ -5,10 +5,10 @@
     <div class="container">
         <div class="hero-content">
             <h1>Mario Festersen</h1>
-            <p class="hero-subtitle">Data & Development. I turn data into insight and ideas into software that works in practice.</p>
+            <p class="hero-subtitle">{{ t.hero.subtitle }}</p>
             <div class="hero-cta">
-                <a href="/projects" class="btn btn-primary">View My Work</a>
-                <a href="/contact" class="btn btn-outline">Get In Touch</a>
+                <a href="{{ lang == 'da' ? '/projekter' : '/en/projects' }}" class="btn btn-primary">{{ t.hero.cta_work }}</a>
+                <a href="{{ lang == 'da' ? '/kontakt' : '/en/contact' }}" class="btn btn-outline">{{ t.hero.cta_contact }}</a>
             </div>
         </div>
         <div class="hero-image">
@@ -19,31 +19,31 @@
 
 <section class="section">
     <div class="container">
-        <h2 class="section-title">What I Work With</h2>
+        <h2 class="section-title">{{ t.sections.what_i_work_with }}</h2>
         <div class="areas-grid">
             <div class="area-card">
-                <h3>Data Engineering</h3>
-                <p>I build pipelines that move, clean, and structure data at scale. ETL/ELT workflows, database design, and cloud infrastructure on AWS and Databricks.</p>
+                <h3>{{ t.areas.data_engineering.title }}</h3>
+                <p>{{ t.areas.data_engineering.desc }}</p>
             </div>
             <div class="area-card">
-                <h3>Machine Learning</h3>
-                <p>Time-series forecasting, NLP, and deep learning. I like building models that solve real problems and can actually run in production.</p>
+                <h3>{{ t.areas.machine_learning.title }}</h3>
+                <p>{{ t.areas.machine_learning.desc }}</p>
             </div>
             <div class="area-card">
-                <h3>Data Analytics</h3>
-                <p>Turning raw data into clear insight. Statistical analysis, visualization, and reporting that helps people make better decisions.</p>
+                <h3>{{ t.areas.data_analytics.title }}</h3>
+                <p>{{ t.areas.data_analytics.desc }}</p>
             </div>
             <div class="area-card">
-                <h3>Full-Stack Development</h3>
-                <p>Backend logic, APIs, databases, and frontend interfaces. PHP, Python, JavaScript. Whatever gets the job done in practice.</p>
+                <h3>{{ t.areas.fullstack.title }}</h3>
+                <p>{{ t.areas.fullstack.desc }}</p>
             </div>
             <div class="area-card">
-                <h3>Automation</h3>
-                <p>Replacing manual processes with code. Email workflows, API integrations, document generation, and scheduled jobs.</p>
+                <h3>{{ t.areas.automation.title }}</h3>
+                <p>{{ t.areas.automation.desc }}</p>
             </div>
             <div class="area-card">
-                <h3>Communication</h3>
-                <p>8 years as a science teacher taught me to explain complex topics clearly. I like bridging the gap between technical work and the people who use it.</p>
+                <h3>{{ t.areas.communication.title }}</h3>
+                <p>{{ t.areas.communication.desc }}</p>
             </div>
         </div>
     </div>
@@ -51,7 +51,7 @@
 
 <section class="section">
     <div class="container">
-        <h2 class="section-title">Featured Projects</h2>
+        <h2 class="section-title">{{ t.sections.featured_projects }}</h2>
         <div class="project-grid">
             {% for project in projects %}
             <article class="project-card">
@@ -59,36 +59,36 @@
                 <img src="{{ project.featured_image }}" alt="{{ project.title.rendered }}" class="project-card-image">
                 {% endif %}
                 <div class="project-card-body">
-                    <h3><a href="/projects/{{ project.slug }}">{{ project.title.rendered|raw }}</a></h3>
+                    <h3><a href="{{ (lang == 'da' ? '' : '/en') ~ '/projects/' ~ project.slug }}">{{ project.title.rendered|raw }}</a></h3>
                     <p>{{ project.excerpt.rendered|striptags|truncate(120) }}</p>
                 </div>
             </article>
             {% else %}
-            <p class="empty-state">Projects coming soon.</p>
+            <p class="empty-state">{{ t.empty.projects }}</p>
             {% endfor %}
         </div>
         {% if projects|length > 0 %}
-        <p class="section-more"><a href="/projects">View all projects &rarr;</a></p>
+        <p class="section-more"><a href="{{ lang == 'da' ? '/projekter' : '/en/projects' }}">{{ t.sections.view_all_projects }} &rarr;</a></p>
         {% endif %}
     </div>
 </section>
 
 <section class="section section-alt">
     <div class="container">
-        <h2 class="section-title">Latest Posts</h2>
+        <h2 class="section-title">{{ t.sections.latest_posts }}</h2>
         <div class="post-list">
             {% for post in posts %}
             <article class="post-preview">
                 <time datetime="{{ post.date }}">{{ post.date|date("F j, Y") }}</time>
-                <h3><a href="/blog/{{ post.slug }}">{{ post.title.rendered|raw }}</a></h3>
+                <h3><a href="{{ (lang == 'da' ? '' : '/en') ~ '/blog/' ~ post.slug }}">{{ post.title.rendered|raw }}</a></h3>
                 <p>{{ post.excerpt.rendered|striptags|truncate(160) }}</p>
             </article>
             {% else %}
-            <p class="empty-state">Blog posts coming soon.</p>
+            <p class="empty-state">{{ t.empty.posts }}</p>
             {% endfor %}
         </div>
         {% if posts|length > 0 %}
-        <p class="section-more"><a href="/blog">Read all posts &rarr;</a></p>
+        <p class="section-more"><a href="{{ lang == 'da' ? '/blog' : '/en/blog' }}">{{ t.sections.read_all_posts }} &rarr;</a></p>
         {% endif %}
     </div>
 </section>

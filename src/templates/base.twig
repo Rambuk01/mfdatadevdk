@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="{{ lang }}" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +16,7 @@
 <body>
     <header class="site-header">
         <div class="container">
-            <a href="/" class="site-logo">
+            <a href="{{ lang == 'da' ? '/' : '/en/' }}" class="site-logo">
                 <span class="logo-name">{{ site_name }}</span>
                 <span class="logo-tagline">{{ site_tagline }}</span>
             </a>
@@ -25,13 +25,17 @@
                     <span></span><span></span><span></span>
                 </button>
                 <ul class="nav-links">
-                    <li><a href="/" {% if page_title == 'Home' %}class="active"{% endif %}>Home</a></li>
-                    <li><a href="/projects" {% if page_title == 'Projects' %}class="active"{% endif %}>Projects</a></li>
-                    <li><a href="/blog" {% if page_title == 'Blog' %}class="active"{% endif %}>Blog</a></li>
-                    <li><a href="/about" {% if page_title == 'About' %}class="active"{% endif %}>About</a></li>
-                    <li><a href="/contact" {% if page_title == 'Contact' %}class="active"{% endif %}>Contact</a></li>
+                    <li><a href="{{ lang == 'da' ? '/' : '/en/' }}" {% if page_title == 'Home' %}class="active"{% endif %}>{{ t.nav.home }}</a></li>
+                    <li><a href="{{ lang == 'da' ? '/projekter' : '/en/projects' }}" {% if page_title == 'Projects' %}class="active"{% endif %}>{{ t.nav.projects }}</a></li>
+                    <li><a href="{{ lang == 'da' ? '/blog' : '/en/blog' }}" {% if page_title == 'Blog' %}class="active"{% endif %}>{{ t.nav.blog }}</a></li>
+                    <li><a href="{{ lang == 'da' ? '/om' : '/en/about' }}" {% if page_title == 'About' %}class="active"{% endif %}>{{ t.nav.about }}</a></li>
+                    <li><a href="{{ lang == 'da' ? '/kontakt' : '/en/contact' }}" {% if page_title == 'Contact' %}class="active"{% endif %}>{{ t.nav.contact }}</a></li>
                 </ul>
             </nav>
+            <div class="lang-switcher">
+                <a href="{{ lang == 'da' ? '/' : alt_url }}" class="lang-flag {% if lang == 'da' %}active{% endif %}" title="Dansk">&#127465;&#127472;</a>
+                <a href="{{ lang == 'en' ? '/en/' : alt_url }}" class="lang-flag {% if lang == 'en' %}active{% endif %}" title="English">&#127468;&#127463;</a>
+            </div>
             <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
                 <span class="theme-icon-light">&#9789;</span>
                 <span class="theme-icon-dark">&#9788;</span>
@@ -46,7 +50,7 @@
     <footer class="site-footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; {{ current_year }} {{ site_name }}. All rights reserved.</p>
+                <p>&copy; {{ current_year }} {{ site_name }}. {{ t.footer.rights }}</p>
                 <div class="footer-links">
                     <a href="https://github.com/mariofestersen" target="_blank" rel="noopener">GitHub</a>
                     <a href="https://linkedin.com/in/mariofestersen" target="_blank" rel="noopener">LinkedIn</a>

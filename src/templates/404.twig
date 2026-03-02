@@ -4,8 +4,8 @@
 <section class="section">
     <div class="container container-narrow" style="text-align: center;">
         <h1>404</h1>
-        <p class="hero-subtitle">Page not found.</p>
-        <a href="/" class="btn btn-primary">Go home</a>
+        <p class="hero-subtitle">{{ t.error.not_found }}</p>
+        <a href="{{ lang == 'da' ? '/' : '/en/' }}" class="btn btn-primary">{{ t.error.go_home }}</a>
     </div>
 </section>
 {% endblock %}

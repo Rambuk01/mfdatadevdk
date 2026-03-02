@@ -3,7 +3,7 @@
 {% block content %}
 <section class="section">
     <div class="container">
-        <h1 class="page-title">Contact</h1>
+        <h1 class="page-title">{{ t.contact_page.title }}</h1>
 
         {% if page %}
         <div class="prose">
@@ -12,7 +12,7 @@
         {% endif %}
 
         <div class="contact-content">
-            <p>Interested in working together? I'm open to freelance projects, consulting, and full-time opportunities in data science and engineering.</p>
+            <p>{{ t.contact_page.intro }}</p>
 
             <div class="contact-methods">
                 <div class="contact-method">
