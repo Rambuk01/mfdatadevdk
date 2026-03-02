@@ -240,6 +240,30 @@ main {
 [data-theme="light"] .theme-icon-dark { display: none; }
 [data-theme="dark"] .theme-icon-light { display: none; }
 
+/* Language switcher */
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    flex-shrink: 0;
+}
+
+.lang-flag {
+    font-size: 1.3rem;
+    opacity: 0.4;
+    transition: opacity var(--transition);
+    text-decoration: none;
+    line-height: 1;
+}
+
+.lang-flag:hover {
+    opacity: 1;
+}
+
+.lang-flag.active {
+    opacity: 0.9;
+}
+
 /* ========================================
    Hero — large, bold, with profile image
    ======================================== */
