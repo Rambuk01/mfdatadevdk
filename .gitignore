@@ -23,3 +23,6 @@ Thumbs.db
 
 # Claude
 .claude/
+
+# Worktrees
+.worktrees/
