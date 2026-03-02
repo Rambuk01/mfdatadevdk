@@ -3,12 +3,10 @@
     var toggle = document.querySelector('.theme-toggle');
     var html = document.documentElement;
 
-    // Load saved preference or use system preference
+    // Load saved preference, default to light
     var saved = localStorage.getItem('theme');
     if (saved) {
         html.setAttribute('data-theme', saved);
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        html.setAttribute('data-theme', 'dark');
     }
 
     if (toggle) {
