@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "subtitle": "Data & Development. I turn data into insight and ideas into software that works in practice.",
+    "cta_work": "View My Work",
+    "cta_contact": "Get In Touch"
+  },
+  "sections": {
+    "what_i_work_with": "What I Work With",
+    "featured_projects": "Featured Projects",
+    "latest_posts": "Latest Posts",
+    "view_all_projects": "View all projects",
+    "read_all_posts": "Read all posts"
+  },
+  "areas": {
+    "data_engineering": {
+      "title": "Data Engineering",
+      "desc": "I build pipelines that move, clean, and structure data at scale. ETL/ELT workflows, database design, and cloud infrastructure on AWS and Databricks."
+    },
+    "machine_learning": {
+      "title": "Machine Learning",
+      "desc": "Time-series forecasting, NLP, and deep learning. I like building models that solve real problems and can actually run in production."
+    },
+    "data_analytics": {
+      "title": "Data Analytics",
+      "desc": "Turning raw data into clear insight. Statistical analysis, visualization, and reporting that helps people make better decisions."
+    },
+    "fullstack": {
+      "title": "Full-Stack Development",
+      "desc": "Backend logic, APIs, databases, and frontend interfaces. PHP, Python, JavaScript. Whatever gets the job done in practice."
+    },
+    "automation": {
+      "title": "Automation",
+      "desc": "Replacing manual processes with code. Email workflows, API integrations, document generation, and scheduled jobs."
+    },
+    "communication": {
+      "title": "Communication",
+      "desc": "8 years as a science teacher taught me to explain complex topics clearly. I like bridging the gap between technical work and the people who use it."
+    }
+  },
+  "projects_page": {
+    "title": "Projects",
+    "intro": "A selection of my work in data and development."
+  },
+  "blog_page": {
+    "title": "Blog",
+    "read_more": "Read more",
+    "newer": "Newer",
+    "older": "Older"
+  },
+  "about_page": {
+    "title": "About"
+  },
+  "contact_page": {
+    "title": "Contact",
+    "intro": "Interested in working together? I'm open to freelance projects, consulting, and full-time opportunities in data science and engineering."
+  },
+  "empty": {
+    "projects": "Projects coming soon.",
+    "posts": "Blog posts coming soon.",
+    "blog_posts": "No posts yet. Check back soon!"
+  },
+  "post": {
+    "back_to_blog": "Back to blog"
+  },
+  "project": {
+    "back_to_projects": "Back to projects",
+    "view_live": "View Live",
+    "view_source": "View Source"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  },
+  "error": {
+    "not_found": "Page not found.",
+    "go_home": "Go home"
+  }
+}
