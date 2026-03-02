@@ -33,6 +33,60 @@ $twig->addGlobal('site_name', 'Mario Festersen');
 $twig->addGlobal('site_tagline', 'Data & Development');
 $twig->addGlobal('current_year', date('Y'));
 
+// Language detection
+$requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) ?? '/';
+$lang = 'da';
+
+if (preg_match('#^/en(/.*)?$#', $requestUri, $matches)) {
+    $lang = 'en';
+    $_SERVER['REQUEST_URI'] = $matches[1] ?: '/';
+} else {
+    // Map Danish slugs to canonical route names
+    $daSlugMap = [
+        '/projekter' => '/projects',
+        '/om' => '/about',
+        '/kontakt' => '/contact',
+    ];
+    foreach ($daSlugMap as $daSlug => $enSlug) {
+        if ($requestUri === $daSlug || strpos($requestUri, $daSlug . '/') === 0) {
+            $_SERVER['REQUEST_URI'] = str_replace($daSlug, $enSlug, $_SERVER['REQUEST_URI']);
+            break;
+        }
+    }
+}
+
+// Load translations
+$translationFile = __DIR__ . "/translations/{$lang}.json";
+$translations = file_exists($translationFile)
+    ? json_decode(file_get_contents($translationFile), true) ?? []
+    : [];
+
+$twig->addGlobal('t', $translations);
+$twig->addGlobal('lang', $lang);
+
+// Compute alternate language URL for the language switcher
+$altLang = $lang === 'da' ? 'en' : 'da';
+$enSlugMap = ['/projects' => '/projekter', '/about' => '/om', '/contact' => '/kontakt'];
+$currentPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) ?? '/';
+
+if ($lang === 'da') {
+    $altUrl = '/en' . $currentPath;
+} else {
+    $altPath = $currentPath;
+    foreach ($enSlugMap as $en => $da) {
+        if ($altPath === $en || strpos($altPath, $en . '/') === 0) {
+            $altPath = str_replace($en, $da, $altPath);
+            break;
+        }
+    }
+    $altUrl = $altPath;
+}
+
+$twig->addGlobal('alt_lang', $altLang);
+$twig->addGlobal('alt_url', $altUrl);
+
+$wpApi->setLanguage($lang);
+
 // Router
 $router = new \Bramus\Router\Router();
 
