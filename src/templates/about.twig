@@ -1,0 +1,55 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<section class="section">
+    <div class="container container-narrow">
+        <h1 class="page-title">About</h1>
+
+        {% if page %}
+        <div class="prose">
+            {{ page.content.rendered|raw }}
+        </div>
+        {% else %}
+        <div class="prose">
+            <p>I'm Mario Festersen — a developer and data enthusiast based in Denmark.</p>
+            <p>With a background in web development and a passion for data science and engineering, I build things that turn raw data into actionable insights and ideas into working software.</p>
+
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h3>Development</h3>
+                    <ul>
+                        <li>PHP</li>
+                        <li>Python</li>
+                        <li>SQL</li>
+                        <li>JavaScript</li>
+                        <li>HTML/CSS</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>Data</h3>
+                    <ul>
+                        <li>Data Analysis</li>
+                        <li>Data Engineering</li>
+                        <li>SQL / PostgreSQL</li>
+                        <li>Python / Pandas</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>Tools</h3>
+                    <ul>
+                        <li>Git / GitHub</li>
+                        <li>Docker</li>
+                        <li>Linux</li>
+                        <li>WordPress</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Experience</h2>
+            <p>2+ years of professional web development experience, with a growing focus on data science and data engineering.</p>
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

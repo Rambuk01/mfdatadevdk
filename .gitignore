@@ -1,0 +1,25 @@
+# Dependencies
+/vendor/
+
+# Environment
+.env
+.env.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Cache
+/cache/
+
+# WordPress (managed separately on server)
+/cms/
+
+# Claude
+.claude/

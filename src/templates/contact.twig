@@ -1,0 +1,34 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<section class="section">
+    <div class="container container-narrow">
+        <h1 class="page-title">Contact</h1>
+
+        {% if page %}
+        <div class="prose">
+            {{ page.content.rendered|raw }}
+        </div>
+        {% endif %}
+
+        <div class="contact-content">
+            <p>Interested in working together? I'm open to freelance projects, consulting, and full-time opportunities in data science and engineering.</p>
+
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <h3>Email</h3>
+                    <a href="mailto:mario@mfdatadev.dk">mario@mfdatadev.dk</a>
+                </div>
+                <div class="contact-method">
+                    <h3>LinkedIn</h3>
+                    <a href="https://linkedin.com/in/mariofestersen" target="_blank" rel="noopener">linkedin.com/in/mariofestersen</a>
+                </div>
+                <div class="contact-method">
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/mariofestersen" target="_blank" rel="noopener">github.com/mariofestersen</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

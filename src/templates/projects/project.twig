@@ -1,0 +1,36 @@
+{% extends "base.twig" %}
+
+{% block meta_description %}{{ project.excerpt.rendered|striptags|truncate(160) }}{% endblock %}
+
+{% block content %}
+<article class="section">
+    <div class="container container-narrow">
+        <header class="post-header">
+            <a href="/projects" class="back-link">&larr; Back to projects</a>
+            <h1>{{ project.title.rendered|raw }}</h1>
+            {% if project.meta.tech_stack is defined and project.meta.tech_stack %}
+            <div class="tech-tags">
+                {% for tech in project.meta.tech_stack|split(',') %}
+                <span class="tag">{{ tech|trim }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </header>
+
+        <div class="post-content prose">
+            {{ project.content.rendered|raw }}
+        </div>
+
+        {% if (project.meta.live_url is defined and project.meta.live_url) or (project.meta.github_url is defined and project.meta.github_url) %}
+        <div class="project-links">
+            {% if project.meta.live_url %}
+            <a href="{{ project.meta.live_url }}" class="btn btn-primary" target="_blank" rel="noopener">View Live</a>
+            {% endif %}
+            {% if project.meta.github_url %}
+            <a href="{{ project.meta.github_url }}" class="btn btn-outline" target="_blank" rel="noopener">View Source</a>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</article>
+{% endblock %}

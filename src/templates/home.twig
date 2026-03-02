@@ -1,0 +1,58 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<section class="hero">
+    <div class="container">
+        <h1>Hi, I'm <span class="accent">Mario Festersen</span></h1>
+        <p class="hero-subtitle">Data & Development — turning data into insight and ideas into software.</p>
+        <div class="hero-cta">
+            <a href="/projects" class="btn btn-primary">View My Work</a>
+            <a href="/contact" class="btn btn-outline">Get In Touch</a>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="project-grid">
+            {% for project in projects %}
+            <article class="project-card">
+                {% if project.featured_image %}
+                <img src="{{ project.featured_image }}" alt="{{ project.title.rendered }}" class="project-card-image">
+                {% endif %}
+                <div class="project-card-body">
+                    <h3><a href="/projects/{{ project.slug }}">{{ project.title.rendered|raw }}</a></h3>
+                    <p>{{ project.excerpt.rendered|striptags|truncate(120) }}</p>
+                </div>
+            </article>
+            {% else %}
+            <p class="empty-state">Projects coming soon.</p>
+            {% endfor %}
+        </div>
+        {% if projects|length > 0 %}
+        <p class="section-more"><a href="/projects">View all projects &rarr;</a></p>
+        {% endif %}
+    </div>
+</section>
+
+<section class="section section-alt">
+    <div class="container">
+        <h2 class="section-title">Latest Posts</h2>
+        <div class="post-list">
+            {% for post in posts %}
+            <article class="post-preview">
+                <time datetime="{{ post.date }}">{{ post.date|date("F j, Y") }}</time>
+                <h3><a href="/blog/{{ post.slug }}">{{ post.title.rendered|raw }}</a></h3>
+                <p>{{ post.excerpt.rendered|striptags|truncate(160) }}</p>
+            </article>
+            {% else %}
+            <p class="empty-state">Blog posts coming soon.</p>
+            {% endfor %}
+        </div>
+        {% if posts|length > 0 %}
+        <p class="section-more"><a href="/blog">Read all posts &rarr;</a></p>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

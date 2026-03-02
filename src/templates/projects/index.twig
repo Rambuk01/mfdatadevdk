@@ -1,0 +1,33 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <h1 class="page-title">Projects</h1>
+        <p class="page-intro">A selection of my work in data and development.</p>
+
+        <div class="project-grid">
+            {% for project in projects %}
+            <article class="project-card">
+                {% if project.featured_image %}
+                <img src="{{ project.featured_image }}" alt="{{ project.title.rendered }}" class="project-card-image">
+                {% endif %}
+                <div class="project-card-body">
+                    <h2><a href="/projects/{{ project.slug }}">{{ project.title.rendered|raw }}</a></h2>
+                    <p>{{ project.excerpt.rendered|striptags|truncate(140) }}</p>
+                    {% if project.meta.tech_stack is defined and project.meta.tech_stack %}
+                    <div class="tech-tags">
+                        {% for tech in project.meta.tech_stack|split(',') %}
+                        <span class="tag">{{ tech|trim }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </article>
+            {% else %}
+            <p class="empty-state">Projects coming soon.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

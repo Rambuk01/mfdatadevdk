@@ -1,0 +1,34 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <h1 class="page-title">Blog</h1>
+
+        <div class="post-list">
+            {% for post in posts %}
+            <article class="post-preview">
+                <time datetime="{{ post.date }}">{{ post.date|date("F j, Y") }}</time>
+                <h2><a href="/blog/{{ post.slug }}">{{ post.title.rendered|raw }}</a></h2>
+                <p>{{ post.excerpt.rendered|striptags|truncate(200) }}</p>
+                <a href="/blog/{{ post.slug }}" class="read-more">Read more &rarr;</a>
+            </article>
+            {% else %}
+            <p class="empty-state">No posts yet. Check back soon!</p>
+            {% endfor %}
+        </div>
+
+        {% if total_pages > 1 %}
+        <nav class="pagination">
+            {% if current_page > 1 %}
+            <a href="/blog?page={{ current_page - 1 }}" class="btn btn-outline">&larr; Newer</a>
+            {% endif %}
+            <span class="pagination-info">Page {{ current_page }} of {{ total_pages }}</span>
+            {% if current_page < total_pages %}
+            <a href="/blog?page={{ current_page + 1 }}" class="btn btn-outline">Older &rarr;</a>
+            {% endif %}
+        </nav>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}
