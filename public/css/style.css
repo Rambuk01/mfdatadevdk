@@ -92,7 +92,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: -0.03em;
     line-height: 1.15;
 }
@@ -157,7 +157,7 @@ main {
 .logo-name {
     font-family: var(--font-heading);
     font-size: var(--font-size-lg);
-    font-weight: 800;
+    font-weight: 600;
     letter-spacing: -0.02em;
     text-transform: uppercase;
 }
@@ -216,20 +216,25 @@ main {
 .theme-toggle {
     background: none;
     border: none;
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
-    opacity: 0.5;
+    font-size: 1.5rem;
+    color: var(--color-text);
+    opacity: 0.6;
     transition: opacity var(--transition);
     flex-shrink: 0;
 }
 
 .theme-toggle:hover {
     opacity: 1;
+}
+
+[data-theme="dark"] .theme-toggle {
+    color: #ffffff;
 }
 
 [data-theme="light"] .theme-icon-dark { display: none; }
@@ -256,7 +261,7 @@ main {
 
 .hero h1 {
     font-size: var(--font-size-4xl);
-    font-weight: 800;
+    font-weight: 600;
     margin-bottom: var(--space-lg);
     line-height: 1.05;
 }
@@ -277,7 +282,7 @@ main {
 
 .hero-image {
     display: flex;
-    justify-content: center;
+    justify-content: right;
 }
 
 .hero-image img {
@@ -411,7 +416,7 @@ main {
 
 .area-card h3 {
     font-size: var(--font-size-lg);
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: var(--space-md);
     letter-spacing: -0.02em;
 }
@@ -692,7 +697,7 @@ main {
 
 .skill-group h3 {
     font-size: var(--font-size-sm);
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     margin-bottom: var(--space-sm);
