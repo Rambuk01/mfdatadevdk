@@ -2,13 +2,13 @@
 
 /**
  * All routes for the frontend.
- * Variables $router, $twig, $wpApi, $blogService, and $lang are available from index.php.
+ * Variables $router, $twig, $wpApi, $blogService, $projectService, and $lang are available from index.php.
  */
 
 // Home
-$router->get('/', function () use ($twig, $wpApi, $blogService, $lang) {
+$router->get('/', function () use ($twig, $projectService, $blogService, $lang) {
     $posts = $blogService->getPosts($lang, 3);
-    $projects = $wpApi->getProjects(['per_page' => 3]);
+    $projects = $projectService->getProjects($lang, 3);
 
     echo $twig->render('home.twig', [
         'page_title' => 'Home',
@@ -48,8 +48,8 @@ $router->get('/blog/{slug}', function ($slug) use ($twig, $blogService, $lang) {
 });
 
 // Projects listing
-$router->get('/projects', function () use ($twig, $wpApi) {
-    $projects = $wpApi->getProjects(['per_page' => 20]);
+$router->get('/projects', function () use ($twig, $projectService, $lang) {
+    $projects = $projectService->getProjects($lang, 20);
 
     echo $twig->render('projects/index.twig', [
         'page_title' => 'Projects',
@@ -58,8 +58,8 @@ $router->get('/projects', function () use ($twig, $wpApi) {
 });
 
 // Single project
-$router->get('/projects/{slug}', function ($slug) use ($twig, $wpApi) {
-    $project = $wpApi->getProject($slug);
+$router->get('/projects/{slug}', function ($slug) use ($twig, $projectService, $lang) {
+    $project = $projectService->getProject($slug, $lang);
 
     if (!$project) {
         http_response_code(404);

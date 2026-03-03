@@ -7,6 +7,7 @@ use Twig\Loader\FilesystemLoader;
 use Twig\TwigFilter;
 use App\Services\WordPressApi;
 use App\Services\BlogService;
+use App\Services\ProjectService;
 
 // Twig setup
 $loader = new FilesystemLoader(__DIR__ . '/src/templates');
@@ -90,6 +91,9 @@ $wpApi->setLanguage($lang);
 
 // Blog service (markdown files)
 $blogService = new BlogService(__DIR__ . '/content/blog');
+
+// Project service (markdown files)
+$projectService = new ProjectService(__DIR__ . '/content/projects');
 
 // Router
 $router = new \Bramus\Router\Router();
