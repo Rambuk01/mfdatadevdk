@@ -687,6 +687,13 @@ main {
     font-style: italic;
 }
 
+.prose blockquote.recommendation {
+    font-style: normal;
+    background: var(--color-bg-alt);
+    padding: var(--space-lg);
+    border-radius: 4px;
+}
+
 .prose code {
     background: var(--color-code-bg);
     padding: 0.15rem 0.4rem;
