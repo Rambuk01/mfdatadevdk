@@ -17,6 +17,8 @@
     --color-accent-hover: #000000;
     --color-border: #ddd;
     --color-code-bg: #eeedea;
+    --color-nav: #999;
+    --color-nav-hover: #000;
 
     /* Typography */
     --font-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -58,6 +60,8 @@
     --color-accent-hover: #ffffff;
     --color-border: #333;
     --color-code-bg: #1a1a1a;
+    --color-nav: #888;
+    --color-nav-hover: #fff;
 }
 
 /* ========================================
@@ -173,7 +177,7 @@ main {
 }
 
 .nav-links a {
-    color: var(--color-text-secondary);
+    color: var(--color-nav);
     font-family: var(--font-heading);
     font-size: var(--font-size-sm);
     font-weight: 500;
@@ -186,7 +190,7 @@ main {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: var(--color-text);
+    color: var(--color-nav-hover);
     opacity: 1;
 }
 
