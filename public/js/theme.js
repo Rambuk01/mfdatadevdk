@@ -23,8 +23,15 @@
     var navLinks = document.querySelector('.nav-links');
 
     if (navToggle && navLinks) {
-        navToggle.addEventListener('click', function () {
+        navToggle.addEventListener('click', function (e) {
+            e.stopPropagation();
             navLinks.classList.toggle('open');
+        });
+
+        document.addEventListener('click', function (e) {
+            if (!navLinks.contains(e.target) && !navToggle.contains(e.target)) {
+                navLinks.classList.remove('open');
+            }
         });
     }
 })();
