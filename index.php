@@ -6,6 +6,7 @@ use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 use Twig\TwigFilter;
 use App\Services\WordPressApi;
+use App\Services\BlogService;
 
 // Twig setup
 $loader = new FilesystemLoader(__DIR__ . '/src/templates');
@@ -86,6 +87,9 @@ $twig->addGlobal('alt_lang', $altLang);
 $twig->addGlobal('alt_url', $altUrl);
 
 $wpApi->setLanguage($lang);
+
+// Blog service (markdown files)
+$blogService = new BlogService(__DIR__ . '/content/blog');
 
 // Router
 $router = new \Bramus\Router\Router();

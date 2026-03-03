@@ -2,12 +2,12 @@
 
 /**
  * All routes for the frontend.
- * Variables $router, $twig, and $wpApi are available from index.php.
+ * Variables $router, $twig, $wpApi, $blogService, and $lang are available from index.php.
  */
 
 // Home
-$router->get('/', function () use ($twig, $wpApi) {
-    $posts = $wpApi->getPosts(['per_page' => 3]);
+$router->get('/', function () use ($twig, $wpApi, $blogService, $lang) {
+    $posts = $blogService->getPosts($lang, 3);
     $projects = $wpApi->getProjects(['per_page' => 3]);
 
     echo $twig->render('home.twig', [
@@ -18,10 +18,10 @@ $router->get('/', function () use ($twig, $wpApi) {
 });
 
 // Blog listing
-$router->get('/blog', function () use ($twig, $wpApi) {
+$router->get('/blog', function () use ($twig, $blogService, $lang) {
     $page = isset($_GET['page']) ? max(1, (int)$_GET['page']) : 1;
-    $posts = $wpApi->getPosts(['per_page' => 10, 'page' => $page]);
-    $totalPages = $wpApi->getLastTotalPages();
+    $posts = $blogService->getPosts($lang, 10, $page);
+    $totalPages = $blogService->getLastTotalPages();
 
     echo $twig->render('blog/index.twig', [
         'page_title' => 'Blog',
@@ -32,8 +32,8 @@ $router->get('/blog', function () use ($twig, $wpApi) {
 });
 
 // Single blog post
-$router->get('/blog/{slug}', function ($slug) use ($twig, $wpApi) {
-    $post = $wpApi->getPost($slug);
+$router->get('/blog/{slug}', function ($slug) use ($twig, $blogService, $lang) {
+    $post = $blogService->getPost($slug, $lang);
 
     if (!$post) {
         http_response_code(404);

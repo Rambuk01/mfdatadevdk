@@ -27,6 +27,7 @@ Thumbs.db
 # Worktrees
 .worktrees/
 
-# Markdown
+# Markdown (except blog posts)
 *.md
+!content/blog/**/*.md
 

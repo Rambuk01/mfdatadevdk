@@ -115,7 +115,7 @@ class WordPressApi
         // Make HTTP request
         $context = stream_context_create([
             'http' => [
-                'timeout' => 10,
+                'timeout' => 5,
                 'ignore_errors' => true,
             ],
         ]);
