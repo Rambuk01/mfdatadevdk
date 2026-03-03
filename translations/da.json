@@ -7,7 +7,11 @@
     "contact": "Kontakt"
   },
   "hero": {
-    "subtitle": "Data & Udvikling. Jeg gør data til indsigt og bygger software, der virker i praksis.",
+    "headings": [
+      "Bedre data og bedre beslutninger",
+      "Fra rådata til færdige løsninger"
+    ],
+    "subtitle": "Datapipelines, machine learning, analyse og software. Jeg hjælper virksomheder med at forstå og bruge deres data.",
     "cta_work": "Se mit arbejde",
     "cta_contact": "Kontakt mig"
   },

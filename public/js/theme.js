@@ -34,4 +34,34 @@
             }
         });
     }
+
+    // Rotating hero headings
+    var heroEl = document.querySelector('.hero-heading');
+    if (heroEl && heroEl.dataset.headings) {
+        var headings = JSON.parse(heroEl.dataset.headings);
+        var index = 0;
+        var switches = 0;
+
+        var interval = setInterval(function () {
+            heroEl.classList.add('slide-out');
+
+            setTimeout(function () {
+                index = (index + 1) % headings.length;
+                heroEl.textContent = headings[index];
+                heroEl.classList.remove('slide-out');
+                heroEl.classList.add('slide-in');
+
+                requestAnimationFrame(function () {
+                    requestAnimationFrame(function () {
+                        heroEl.classList.remove('slide-in');
+                    });
+                });
+            }, 400);
+
+            switches++;
+            if (switches >= 2) {
+                clearInterval(interval);
+            }
+        }, 5000);
+    }
 })();

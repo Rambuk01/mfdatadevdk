@@ -7,7 +7,11 @@
     "contact": "Contact"
   },
   "hero": {
-    "subtitle": "Data & Development. I turn data into insight and ideas into software that works in practice.",
+    "headings": [
+      "Better data and better decisions",
+      "From raw data to working solutions"
+    ],
+    "subtitle": "Data pipelines, machine learning, analytics, and software. I help businesses understand and use their data.",
     "cta_work": "View My Work",
     "cta_contact": "Get In Touch"
   },

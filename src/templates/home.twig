@@ -4,7 +4,7 @@
 <section class="hero">
     <div class="container">
         <div class="hero-content">
-            <h1>Mario Festersen</h1>
+            <h1 class="hero-heading" data-headings='{{ t.hero.headings|json_encode }}'>{{ t.hero.headings[0] }}</h1>
             <p class="hero-subtitle">{{ t.hero.subtitle }}</p>
             <div class="hero-cta">
                 <a href="{{ lang == 'da' ? '/projekter' : '/en/projects' }}" class="btn btn-outline">{{ t.hero.cta_work }}</a>

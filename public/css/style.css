@@ -282,10 +282,26 @@ main {
 }
 
 .hero h1 {
-    font-size: var(--font-size-4xl);
+    font-size: var(--font-size-2xl);
     font-weight: 600;
     margin-bottom: var(--space-lg);
     line-height: 1.05;
+}
+
+.hero-heading {
+    display: inline-block;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.hero-heading.slide-out {
+    transform: translateX(-40px);
+    opacity: 0;
+}
+
+.hero-heading.slide-in {
+    transform: translateX(40px);
+    opacity: 0;
+    transition: none;
 }
 
 .hero-subtitle {
